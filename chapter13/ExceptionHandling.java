@@ -34,17 +34,27 @@ public class ExceptionHandling {
         Scanner fileReader = null;
         try{
             fileReader = new Scanner(file);
-
             while(fileReader.hasNext()){
                 double num = fileReader.nextDouble();
                 System.out.println(num);
             }
-
-
         }catch(FileNotFoundException | InputMismatchException e){
             e.printStackTrace();
         }finally{
             fileReader.close();
+        }
+    }
+
+
+    public static void tryWithResources(){
+        File file = new File("resources/numbers.txt");
+        try(Scanner fileReader = new Scanner(file)){
+            while(fileReader.hasNext()){
+                double num = fileReader.nextDouble();
+                System.out.println(num);
+            }
+        }catch(FileNotFoundException | InputMismatchException e){
+            e.printStackTrace();
         }
     }
 }
