@@ -8,7 +8,6 @@ public class InheritanceTester {
         mom.setName("Glenda");
 
         System.out.println(mom.getName() + " is a " + mom.getGender());
-
     }
 
     public static void testSquareOverride(){
