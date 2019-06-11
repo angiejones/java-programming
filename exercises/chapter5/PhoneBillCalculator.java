@@ -14,6 +14,8 @@ public class PhoneBillCalculator {
         System.out.println("Enter overage minutes:");
         double overageMinutes = scanner.nextDouble();
 
+        scanner.close();
+
         double overageCharge = calculateOverages(overageMinutes);
         double tax = calculateTax(baseCost + overageCharge);
 
