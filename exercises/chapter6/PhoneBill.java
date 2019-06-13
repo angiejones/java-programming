@@ -61,14 +61,14 @@ public class PhoneBill {
     }
 
     public double calculateOverage(){
-        double overageRate = 0.25;
-        if (minutesUsed < allottedMinutes){
+        
+        if (minutesUsed <= allottedMinutes){
             return 0;
         }
-        else {
+            double overageRate = 0.25;
             double overageMinutes = minutesUsed - allottedMinutes;
             return overageMinutes * overageRate;
-        }
+        
     }
 
     public double calculateTax(){
