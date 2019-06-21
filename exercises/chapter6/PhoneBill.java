@@ -61,6 +61,10 @@ public class PhoneBill {
     }
 
     public double calculateOverage(){
+         if(minutesUsed <= allottedMinutes){
+            return 0;
+        }
+
         double overageRate = 0.25;
         double overageMinutes = minutesUsed - allottedMinutes;
         return overageMinutes * overageRate;
