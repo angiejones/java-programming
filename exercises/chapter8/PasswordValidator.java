@@ -43,7 +43,7 @@ public class PasswordValidator {
 
         }while(!validator.isValid());
 
-        System.out.println("Your password has been changed");
+        System.out.println("The proposed password is valid");
 
         validator.closeScanner();
     }
