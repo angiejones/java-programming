@@ -32,9 +32,10 @@ public class PasswordValidator {
     public static void main(String[] args){
         var validator = login();
         validator.printPasswordRules();
-
+        
+        String proposedPassword;
         do{
-            var proposedPassword = validator.getProposedPassword();
+            proposedPassword = validator.getProposedPassword();
             validator.changePassword(proposedPassword);
 
             if(!validator.isValid()){
@@ -42,7 +43,8 @@ public class PasswordValidator {
             }
 
         }while(!validator.isValid());
-
+        
+        validator.currentPassword = proposedPassword;
         System.out.println("Your password has been changed");
 
         validator.closeScanner();
