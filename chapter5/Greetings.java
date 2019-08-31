@@ -13,6 +13,7 @@ public class Greetings {
         System.out.println("Enter your name:");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.next();
+        scanner.close();
         greetUser(name);
     }
 
